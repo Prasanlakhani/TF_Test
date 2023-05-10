@@ -9,7 +9,7 @@ terraform {
 }
 
 provider "google" {
-  project = var.project_name
+  project = "niravgcp4"
   #region  = var.region_name
 }
 
