@@ -42,17 +42,15 @@ source_ranges = ["0.0.0.0/0"]
 }
 
 
-resource "google_compute_instance" "vm_instance" {
-  name         = "testvm1"
-  zone         = "europe-west1-d"
-  machine_type = "e2-micro"
-  boot_disk {
-    initialize_params {
-      image = "debian-cloud/debian-11"
-      }
-  }
-
-
-}
+#resource "google_compute_instance" "vm_instance" {
+#  name         = "testvm1"
+#  zone         = "europe-west1-d"
+#  machine_type = "e2-micro"
+#  boot_disk {
+#    initialize_params {
+#      image = "debian-cloud/debian-11"
+#      }
+#  }
+#}
 
 
