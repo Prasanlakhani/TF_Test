@@ -79,8 +79,8 @@ jobs:
     - name: Terraform Init
       id: init
       run: terraform init
-	  env:
-		GOOGLE_CREDENTIALS: ${{ secrets.TF_API_TOKEN }}
+      env:
+        GOOGLE_CREDENTIALS: ${{ secrets.TF_API_TOKEN }}
 
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
@@ -98,8 +98,8 @@ jobs:
       if: github.event_name == 'pull_request' || github.event_name == 'push'
       run: terraform plan -no-color -input=false
       continue-on-error: true
-	  env:
-		GOOGLE_CREDENTIALS: ${{ secrets.TF_API_TOKEN }}
+      env:
+        GOOGLE_CREDENTIALS: ${{ secrets.TF_API_TOKEN }}
 
     - name: Update Pull Request
       uses: actions/github-script@v6
