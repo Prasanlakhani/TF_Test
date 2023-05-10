@@ -56,17 +56,3 @@ resource "google_compute_instance" "vm_instance" {
 }
 
 
-resource "google_storage_bucket" "bucket1" {
-    name                        = "prasan_a517965_2"
-    location                    = "US-CENTRAL1"
-    storage_class               = "STANDARD"
-    uniform_bucket_level_access = true
-}
-
-
-resource "google_storage_bucket" "bucket1" {
-    name                        = "prasan_a517965_2"
-    location                    = "US-CENTRAL1"
-    storage_class               = "STANDARD"
-    uniform_bucket_level_access = true
-}
