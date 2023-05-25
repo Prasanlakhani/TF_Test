@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"core_vpc","Source":"./modules/vpc-network","Dir":"modules/vpc-network"},{"Key":"mgmt_vpc","Source":"./modules/vpc-network","Dir":"modules/vpc-network"}]}
