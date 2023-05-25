@@ -21,10 +21,12 @@ terraform {
 
 terraform {
   backend "gcs" {
-    bucket = var.backend_bucket
+    #bucket = var.backend_bucket
     prefix = "terraform/state"
   }
 }
+
+
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Create Core VPC
