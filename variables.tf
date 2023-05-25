@@ -11,6 +11,10 @@ variable "project" {
 #    type = string
 #}
 
+variable "backend_bucket" {
+  type = string
+}
+
 variable "core_vpc_description" {
   type = string
 }
