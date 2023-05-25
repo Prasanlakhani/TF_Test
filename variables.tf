@@ -6,6 +6,10 @@ variable "project" {
   type = string
 }
 
+variable "backend_bucket" {
+  type = string
+}
+
 #variable "vpc_names" {
 #
 #    type = string
