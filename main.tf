@@ -38,7 +38,7 @@ module "core_vpc" {
   #vpc_name        = "core-vpc"
   vpc_name        = "vpc${count.index}"
   vpc_description = var.core_vpc_description
-  subnets         = var.core_subnets
+  subnets         = var.core_subne
 }
 
 
