@@ -42,7 +42,7 @@
 #       with:
 #         cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
-name: 'Terraform - Develop Production Test'
+name: 'Terraform - Development'
 
 on:
   push:
@@ -59,7 +59,7 @@ permissions:
 
 jobs:
   terraform:
-    name: 'Terraform'
+    name: 'Terraform Development'
     runs-on: ubuntu-latest
     environment: production
 
@@ -82,7 +82,7 @@ jobs:
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
       id: init
-      run: terraform init -backend-config="bucket=nirav2gcp4-tf-state-test"
+      run: terraform init -backend-config="bucket=nirav2gcp4-tf-state-test" -reconfigure
       env:
         GOOGLE_CREDENTIALS: ${{ secrets.TF_API_TOKEN_TEST }}
 
@@ -105,6 +105,6 @@ jobs:
       env:
         GOOGLE_CREDENTIALS: ${{ secrets.TF_API_TOKEN_TEST }}      
       
-#    - name: Terraform Apply
-#      if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-#      run: terraform apply -var-file 'test.tfvars' -auto-approve -input=false
+    - name: Terraform Apply
+      if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+      run: terraform apply -var-file 'test.tfvars' -auto-approve -input=false
