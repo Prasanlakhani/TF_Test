@@ -45,12 +45,12 @@ terraform {
   backend "gcs" {}
 }
 
-provider "google" {
-  project = var.project
-  #region  = var.region_name
-  #credentials = var.GOOGLE_CREDENTIALS
+#provider "google" {
+#  project = var.project
+#  #region  = var.region_name
+#  #credentials = var.GOOGLE_CREDENTIALS
 
-}
+#}
 
 resource "google_compute_network" "vpc_network" {
   #project = var.project
