@@ -29,16 +29,20 @@ terraform {
 
 
 
-terraform {
-  backend "remote" {
-    # The name of your Terraform Cloud organization.
-    organization = "prasanlakhani"
+#terraform {
+#  backend "remote" {
+#    # The name of your Terraform Cloud organization.
+#    organization = "prasanlakhani"
+#
+#    # The name of the Terraform Cloud workspace to store Terraform state files in.
+#    workspaces {
+#      name = var.tf_workspace
+#    }
+#  }
+#}
 
-    # The name of the Terraform Cloud workspace to store Terraform state files in.
-    workspaces {
-      name = var.tf_workspace
-    }
-  }
+terraform {
+  backend "gcs" {}
 }
 
 provider "google" {
