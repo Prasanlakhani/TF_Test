@@ -84,7 +84,7 @@ jobs:
     - name: Terraform Init
       id: init
       #run: terraform init -var-file 'Test.tfvars' -reconfigure #-backend-config="bucket=nirav2gcp4-tf-state-test" -reconfigure
-      run: terraform init -backend-config=test.conf 
+      run: terraform init -backend-config=test.conf -reconfigure
       env:
         GOOGLE_CREDENTIALS: ${{ secrets.TF_API_TOKEN_TEST }}
 
