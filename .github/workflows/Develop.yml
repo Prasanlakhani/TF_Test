@@ -42,7 +42,7 @@
 #       with:
 #         cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
-name: 'Terraform - Development'
+name: 'Terraform Development'
 
 on:
   push:
@@ -61,7 +61,7 @@ jobs:
   terraform:
     name: 'Terraform Development'
     runs-on: ubuntu-latest
-    environment: production
+    environment: development
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
