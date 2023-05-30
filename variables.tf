@@ -15,3 +15,12 @@ variable "backend_bucket" {
 variable "backend_cloud_bucket" {
   type = string
 }
+
+variable "tf_workspace" {
+  type = string
+}
+
+variable "instance_name" {
+  type = string
+}
+
