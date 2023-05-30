@@ -83,8 +83,8 @@ jobs:
     - name: Terraform Init
       id: init
       run: terraform init -backend-config=prod.conf  -reconfigure #-backend-config="bucket=niravgcp4-tf-state-prod" -reconfigure
-      #env:
-      #  GOOGLE_CREDENTIALS: ${{ secrets.TF_CLOUD_TOKEN }}
+      env:
+        GOOGLE_CREDENTIALS: ${{ secrets.TF_API_TOKEN }}
 
     # Checks that all Terraform configuration files adhere to a canonical format
     #- name: Terraform Format
