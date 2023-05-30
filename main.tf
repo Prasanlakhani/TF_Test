@@ -27,6 +27,8 @@ terraform {
 #  }
 #}
 
+
+
 terraform {
   backend "remote" {
     # The name of your Terraform Cloud organization.
@@ -34,13 +36,20 @@ terraform {
 
     # The name of the Terraform Cloud workspace to store Terraform state files in.
     workspaces {
-      name = "Test-workspace"
+      name = var.tf_workspace
     }
   }
 }
 
+provider "google" {
+  project = var.project
+  #region  = var.region_name
+  #credentials = var.GOOGLE_CREDENTIALS
+
+}
 
 resource "google_compute_network" "vpc_network" {
+  #project = var.project
   name                    = var.vpc_name
   auto_create_subnetworks = true
 }
