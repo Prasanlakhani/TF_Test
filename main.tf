@@ -14,35 +14,36 @@ terraform {
     google = {
       source  = "hashicorp/google"
       version = ">= 4.5"
-      #project = var.project
+      project = var.project
     }
   }
 }
 
+
+#terraform {
+#  backend "gcs" {
+#    #bucket = var.backend_bucket
+#    prefix = "terraform/state"
+#  }
+#}
+
 terraform {
-  backend "gcs" {
-    #bucket = var.backend_bucket
-    prefix = "terraform/state"
+  backend "remote" {
+    # The name of your Terraform Cloud organization.
+    organization = "prasanlakhani"
+
+    # The name of the Terraform Cloud workspace to store Terraform state files in.
+    workspaces {
+      name = "Test-workspace"
+    }
   }
 }
 
 
-
-# ---------------------------------------------------------------------------------------------------------------------
-# Create Core VPC
-# ---------------------------------------------------------------------------------------------------------------------
-module "core_vpc" {
-  source  = "./modules/vpc-network"
-  count   = 2
-  project = var.project
-  #vpc_name        = "core-vpc"
-  vpc_name        = "vpc${count.index}"
-  vpc_description = var.core_vpc_description
-  subnets         = var.core_subne
+resource "google_compute_network" "vpc_network" {
+  name                    = var.vpc_name
+  auto_create_subnetworks = true
 }
-
-
-#Update
 
 
 

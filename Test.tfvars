@@ -1,27 +1,15 @@
-project      = "nirav2gcp4"
-project_name = "nirav2gcp4"
-#vpc_names       = "core_vpc"
+instance_name      = "prasan-dev"
 
-core_vpc_description = "core vpc for project"
-core_subnets = {
-  europe-west2-10-250-18-0-24 = {
-    region      = "europe-west2"
-    range       = "10.250.18.0/24"
-    description = "lod-dev gke nodes"
-    secondary_ip_range = [
-      {
-        "ip_cidr_range" : "10.250.0.0/20",
-        "range_name" : "lod-dev-gke-pods"
-      },
-      {
-        "ip_cidr_range" : "10.250.16.0/23",
-        "range_name" : "lod-dev-gke-services"
-      }
-    ]
-  }
-}
+
+project = "nirav2gcp4"
+
+vpc_name           = "dev-vpc"
+
+vmzone = "us-central1-a"
+
+
 
 
 region = "europe-west2"
 
-backend_bucket = "nirav2gcp4-tf-state-test"
+backend_cloud_bucket = "nirav2gcp4-tf-state-test"
