@@ -87,9 +87,9 @@ jobs:
         GOOGLE_CREDENTIALS: ${{ secrets.TF_API_TOKEN }}
 
     # Checks that all Terraform configuration files adhere to a canonical format
-    #- name: Terraform Format
-    #  id: fmt
-    #  run: terraform fmt -check
+    - name: Terraform Format
+      id: fmt
+      run: terraform fmt 
       
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform validate
@@ -111,7 +111,7 @@ jobs:
       env:
         PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
       with:
-        github-token: ${{ secrets.GH_TOKEN }}
+        github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
           const output = `#### Terraform Format and Style 🖌\`${{ steps.fmt.outcome }}\`
           #### Terraform Initialization ⚙️\`${{ steps.init.outcome }}\`
