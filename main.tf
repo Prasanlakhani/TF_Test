@@ -63,21 +63,22 @@ resource "random_id" "random_count" {
   #  upper       = false
 }
 
-resource "google_compute_instance" "instance_creation" {
-  name         = "${var.instance_name}-${random_id.random_count.hex}"
-  machine_type = var.machinetype
-  zone         = var.vmzone
+#resource "google_compute_instance" "instance_creation" {
+  
+#  name         = "${var.instance_name}-${random_id.random_count.hex}"
+#  machine_type = var.machinetype
+#  zone         = var.vmzone
 
-  boot_disk {
-    initialize_params {
-      image = var.imageid
-    }
-  }
+#  boot_disk {
+#    initialize_params {
+#      image = var.imageid
+#    }
+#  }
 
-  network_interface {
-    network    = google_compute_network.vpc_network.id
-    #subnetwork = var.subnetwork_id
-  }
+#  network_interface {
+#    network    = google_compute_network.vpc_network.id
+#    #subnetwork = var.subnetwork_id
+#  }
 
 
 }
