@@ -58,6 +58,30 @@ resource "google_compute_network" "vpc_network" {
   auto_create_subnetworks = true
 }
 
+resource "random_id" "random_count" {
+  byte_length = 4
+  #  upper       = false
+}
+
+resource "google_compute_instance" "instance_creation" {
+  
+  name         = "${var.instance_name}-${random_id.random_count.hex}"
+  machine_type = var.machinetype
+  zone         = var.vmzone
+
+  boot_disk {
+    initialize_params {
+      image = var.imageid
+    }
+  }
+
+  network_interface {
+    network    = google_compute_network.vpc_network.id
+    #subnetwork = var.subnetwork_id
+  }
+}
+
+
 
 
 
