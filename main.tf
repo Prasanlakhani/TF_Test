@@ -58,10 +58,10 @@ resource "google_compute_network" "vpc_network" {
   auto_create_subnetworks = true
 }
 
-resource "random_id" "random_count" {
-  byte_length = 4
-  #  upper       = false
-}
+#resource "random_id" "random_count" {
+#  byte_length = 4
+#  #  upper       = false
+#}
 
 #resource "google_compute_instance" "instance_creation" {
   
@@ -81,7 +81,7 @@ resource "random_id" "random_count" {
 #  }
 
 
-}
+#}
 
 
 
