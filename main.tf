@@ -65,7 +65,7 @@ resource "random_id" "random_count" {
 
 resource "google_compute_instance" "instance_creation" {
   count = 2
-  name         = "${var.instance_name}-${random_id.random_count.hex}"
+  name         = "${var.instance_name}-${random_id.random_count.hex}-${count.index}"
   machine_type = var.machinetype
   zone         = var.vmzone
 
