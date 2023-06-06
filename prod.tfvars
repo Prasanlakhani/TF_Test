@@ -6,7 +6,7 @@ vpc_name = "prod-vpc-prasan"
 #tf_workspace = "TF_PROD"
 #instance_name      = "prasan-prod"
 
-instance_name = "prasan-prod"
+instance_name = "vm-prod"
 machinetype = "e2-micro"
 vmzone = "us-west1-a"
 imageid = "debian-cloud/debian-11"
