@@ -1,5 +1,5 @@
 project = "nirav2gcp4"
-vpc_name = "dev-vpc-0"
+vpc_name = "dev-vpc-prasan"
 
 instance_name = "vm-test"
 machinetype = "e2-micro"
