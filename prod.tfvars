@@ -1,5 +1,5 @@
 project = "niravgcp4"
-vpc_name = "prod-vpc-0"
+vpc_name = "prod-vpc-prasan"
 
 #vmzone = "us-central1-a"
 #backend_cloud_bucket = "niravgcp4-tf-state-prod"
